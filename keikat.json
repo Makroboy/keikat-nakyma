@@ -1,0 +1,30 @@
+[
+  {
+    "datetime": "2025-08-01T20:00:00",
+    "venue": {
+      "name": "Tavastia-klubi",
+      "city": "Helsinki",
+      "country": "Finland"
+    },
+    "offers": [
+      {
+        "type": "Tickets",
+        "url": "https://www.tiketti.fi/kemopetrol"
+      }
+    ]
+  },
+  {
+    "datetime": "2025-08-15T21:00:00",
+    "venue": {
+      "name": "G Live Lab",
+      "city": "Tampere",
+      "country": "Finland"
+    },
+    "offers": [
+      {
+        "type": "Tickets",
+        "url": "https://www.lippu.fi/kemopetrol"
+      }
+    ]
+  }
+]
