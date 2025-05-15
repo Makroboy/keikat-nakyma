@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fi">
 <head>
@@ -25,11 +24,15 @@
   <div id="events">Ladataan keikkoja...</div>
 
   <script>
-    fetch("keikat.json")
+    fetch("https://rest.bandsintown.com/artists/kemopetrol/events?app_id=makroboy-kioski")
       .then(response => response.json())
       .then(data => {
         const container = document.getElementById("events");
         container.innerHTML = "";
+        if (data.length === 0) {
+          container.innerHTML = "Ei tulevia keikkoja.";
+          return;
+        }
         data.forEach(event => {
           const date = new Date(event.datetime);
           const venue = event.venue;
@@ -44,6 +47,10 @@
           `;
           container.appendChild(item);
         });
+      })
+      .catch(error => {
+        document.getElementById("events").innerHTML = "Virhe ladattaessa keikkoja.";
+        console.error("Virhe haettaessa keikkoja:", error);
       });
   </script>
 </body>
